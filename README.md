@@ -1,4 +1,4 @@
-# todoapp2
+# todoapp-pwa-with-firebase
 
 ## Project setup
 ```
