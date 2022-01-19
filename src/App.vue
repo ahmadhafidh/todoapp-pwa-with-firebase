@@ -1,13 +1,26 @@
 <template>
-  <div id="app">
-    <h1>Todo</h1>
-    <form @submit.prevent="addTask">
-      <input type="text" v-model="newTask" />
-      <input type="submit" value="Add" />
-    </form>
+  <div
+    id="app"
+    class="font-sans antialiased w-1/2 mx-auto mt-10 p-8 rounded-md flex flex-col items-center justify-center space-y-4"
+  >
+    <h1 class="text-3xl font-bold">Todo App</h1>
+    <div class="w-full relative">
+      <form @submit.prevent="addTask">
+        <input
+          type="text"
+          placeholder="Type todo"
+          v-model="newTask"
+          class="w-full pr-16 input input-primary input-bordered"
+        />
+        <button type="submit" class="absolute top-0 right-0 rounded-l-none btn btn-primary">Add</button>
+      </form>
+    </div>
 
-    <ul id="tasks-list">
-      <li v-for="(task, index) in sortedTasks" :key="index">
+    <ul class="menu w-full p-3 border-2 border-primary bg-base-100 rounded-box">
+      <li class="menu-title mb-4">
+        <span>Todo Lists</span>
+      </li>
+      <li v-for="(task, index) in sortedTasks" :key="index" class="px-6 mb-4">
         <TaskItem :task="task" @check="onCheck" @delete="onDelete" />
       </li>
     </ul>
@@ -43,6 +56,7 @@ export default {
         done: false,
         created: serverTimestamp(),
       })
+      this.newTask = ''
     },
     onCheck({ task, state }) {
       this.$firestore.tasks.doc(task['.key']).update({
@@ -55,14 +69,3 @@ export default {
   },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

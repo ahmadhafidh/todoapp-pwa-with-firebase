@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import './registerServiceWorker'
+import 'tailwindcss/tailwind.css'
 
 import VueFirestore from 'vue-firestore'
 

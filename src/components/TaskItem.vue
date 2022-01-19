@@ -1,8 +1,13 @@
 <template>
-  <div id="task-item">
-    <input type="checkbox" :checked="task.done" @change="$emit('check', { task, state: $event.target.checked })" />
-    <p>{{ task.name }}</p>
-    <button @click="$emit('delete', task)">delete</button>
+  <div class="flex items-center justify-between">
+    <input
+      class="toggle"
+      type="checkbox"
+      :checked="task.done"
+      @change="$emit('check', { task, state: $event.target.checked })"
+    />
+    <p class="text-lg font-semibold">{{ task.name }}</p>
+    <button class="btn btn-error btn-xs" @click="$emit('delete', task)">delete</button>
   </div>
 </template>
 
@@ -16,16 +21,3 @@ export default {
   },
 }
 </script>
-
-<style>
-#task-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#tasks-list {
-  max-width: 500px;
-  margin: 2rem auto;
-  list-style: none;
-}
-</style>
