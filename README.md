@@ -1,24 +1,5 @@
 # todoapp-pwa-with-firebase
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Link
+<a href="https://todo-5c46b.web.app/">Link 1</a> <br>
+<a href="https://azampwa.netlify.app/">Link 2</a>

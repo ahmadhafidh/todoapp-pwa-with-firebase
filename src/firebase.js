@@ -2,18 +2,15 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyAvBCaNF6JGJJxF2jwh76IyE0di1KBlkiE",
-    authDomain: "todoapp2-f7d61.firebaseapp.com",
-    projectId: "todoapp2-f7d61",
-    storageBucket: "todoapp2-f7d61.appspot.com",
-    messagingSenderId: "544536852063",
-    appId: "1:544536852063:web:a255838edbe30fb9fd4dea"
+  apiKey: "AIzaSyAiuhU8lJZoRJfol5Qt0OmkmL5qjo9pjqs",
+  authDomain: "todo-5c46b.firebaseapp.com",
+  projectId: "todo-5c46b",
+  storageBucket: "todo-5c46b.appspot.com",
+  messagingSenderId: "179920135076",
+  appId: "1:179920135076:web:28a1de5676229af69ed731"
 })
 
-firebaseApp
-  .firestore()
-  .enablePersistence()
-  .catch(() => {});
+firebaseApp.firestore().enablePersistence().catch(() => {});
 
 export const firestore = firebaseApp.firestore();
 export const serverTimestamp = firebase.firestore.FieldValue.serverTimestamp;
