@@ -3,6 +3,7 @@
 ## Run to test Install PWA
 
 ```
+npm run build
 npx http-server dist
 ```
 
