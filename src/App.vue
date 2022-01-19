@@ -10,7 +10,7 @@
 
    <ul id="tasks-list">
      <li v-for="task in sortedTasks" :key="task['.task']">
-       <TaskItem :task="task" />
+       <TaskItem :task="task" @check="onCheck" @delete="onDelete" />
      </li>
    </ul>
   </div>
@@ -46,9 +46,11 @@ export default {
         done: false,
         created: serverTimestamp(),
       })
+
+      this.newTask = '' 
     },
     onCheck({ task, state }){
-      this.$firestore.doc(task['.key']).update({
+      this.$firestore.tasks.doc(task['.key']).update({
         done: state,
       })
     },

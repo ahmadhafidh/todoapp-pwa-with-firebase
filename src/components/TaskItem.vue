@@ -3,7 +3,7 @@
       <input type="checkbox" :checked="task.done"
       @change="$emit('check', {task, state: $event.target.checked})">
       <p> {{ task.name }} </p>
-      <button> delete</button>
+      <button @click="$emit('delete', task)"> delete</button>
   </div>
 </template>
 
