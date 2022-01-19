@@ -9,7 +9,7 @@ npx http-server dist
 
 dan pilih dengan server `http://127.0.0.1:{port}`
 
-atau deploy website berikut [Link Deploy]('https://todoapp-fd927.web.app/')
+atau deploy website berikut [Link Deploy](https://todoapp-fd927.web.app/)
 
 ## Project setup
 
